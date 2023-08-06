@@ -14,25 +14,27 @@
 
         $results = $run -> get_result(); //uzmi sto si dobio
         
-
-
+        
         if($results -> num_rows == 1){
             $admin = $results -> fetch_assoc();
 
             if(password_verify($Password, $admin['Password'])){
                 $_SESSION['Admin_ID'] = $admin['Admin_ID'];
+                $conn ->close();
                 header('location: admin_dashboard.php');
             }
 
             
             else{
                 $_SESSION['error'] = "Netočan password";
+                $conn ->close();
                 header('location: index.php');
                 exit;
             }
         }
         else{
             $_SESSION['error'] = "Netočan username";
+            $conn ->close();
             header('location: index.php');
             exit;
         }

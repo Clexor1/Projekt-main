@@ -46,6 +46,7 @@ $run ->execute();  //izvrsi
 
     $sql = "UPDATE members SET Access_card = '$filename' WHERE Members_ID = $Members_ID";
     $conn -> query($sql);
+    $conn -> close();
     
 
 //html poruka
