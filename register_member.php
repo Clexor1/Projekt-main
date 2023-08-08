@@ -64,12 +64,14 @@ require_once 'config.php';
         </select><br>
 
         <label for="">Postavi sliku</label>
-        <input type="hidden" name="Photo_path" id="PhotoPathInput">
+        <input type="hidden" name="Photo_path" id="PhotoPathInput" value="">
         <div id="dropzone-upload" class = "dropzone"></div>
         <button type="submit">Register Member</button>
     </form>
 
-
+    <?php
+    $conn ->close();
+    ?>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
     <script>
@@ -93,8 +95,6 @@ require_once 'config.php';
             }
         };
     </script>
-    <?php
-    $conn ->close();
-    ?>
+   
 </body>
 </html>

@@ -67,10 +67,12 @@ if(!isset($_SESSION['Admin_ID'])){
     <div class="row">
       <div class="col-md-4">
         <div class="card">
+        <a href="list_members.php">
           <img src="image/kardio.jpg" alt="Slika teretane" class="card-img-top"  width="300" height="200">
+        </a>
           <div class="card-body">
-            <h5 class="card-title">Kardio trening</h5>
-            <p class="card-text">Uživajte u raznim kardio vježbama koje će vam pomoći u s..</p>
+            <h5 class="card-title">Popis</h5>
+            <p class="card-text">Pregledaj popis membera</p>
           </div>
         </div>
       </div>
