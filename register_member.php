@@ -11,6 +11,9 @@ require_once 'config.php';
     <title>Register member</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <style>
+
+    </style>
 </head>
 <body id="body_forma">
     <nav>
@@ -34,7 +37,8 @@ require_once 'config.php';
 <?php  }; ?>
 
 <h1>Register member</h1>
-    <form id="RegisterForm" action="test.php" method = "POST" enctype="multipart/form-data">
+<div id="RegisterForm">
+    <form  class="forma1" action="test.php" method = "POST" enctype="multipart/form-data">
         <label for="firstname">First Name:</label>
         <input type="text" id="First_name" name="First_name" required><br>
 
@@ -68,7 +72,7 @@ require_once 'config.php';
         <div id="dropzone-upload" class = "dropzone"></div>
         <button type="submit">Register Member</button>
     </form>
-
+</div>
     <?php
     $conn ->close();
     ?>
