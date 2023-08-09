@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $Last_name = $_POST['Last_name'];
     $Phone = $_POST['Phone'];
     $Email = $_POST['Email'];
-    $Photo_path = $_POST['Photo_path'];
+    $Photo_path ="";
     $Training_plan_ID = $_POST['Training_plan_ID'];
     $Trainer_ID = 0;
     $Access_card = "";
@@ -41,13 +41,28 @@ $run ->execute();  //izvrsi
     $pdf->Cell(40,10,'Phone: '.$Phone);
     $pdf ->Ln();
 
+    $Photo =$_FILES['my_image'];
+    //var_dump($Photo);
+    $Photo_name = basename($Photo['name']);
+    $Photo_path = 'member_photos/' . $Photo_name; 
+    var_dump($Photo_path);
+    
+    $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];  //dozvoljeni nastavci
+    $ext = pathinfo($Photo_name, PATHINFO_EXTENSION);  //exstenzija mog file
+
+   if(in_array($ext, $allowed_ext) && $Photo ['size'] < 2000000){
+    move_uploaded_file($Photo['tmp_name'],$Photo_path);
+    $sql = "UPDATE members SET Photo_path = '$Photo_path' WHERE Members_ID = $Members_ID";
+    $conn -> query($sql);
+
+   }
     $filename= 'access_cards/access_card_' . $Members_ID . '.pdf';
     $pdf -> Output('F', $filename);
 
     $sql = "UPDATE members SET Access_card = '$filename' WHERE Members_ID = $Members_ID";
     $conn -> query($sql);
     $conn -> close();
-    
+   
 
 //html poruka
     $_SESSION['poruka'] = 'You have successfully registered a user.';

@@ -105,7 +105,7 @@ require_once 'config.php';
                 
                 ?></td>
                 <td><?php echo $result ['Members_ID'];?></td>
-                <td><?php echo $result ['Photo_path'];?></td>
+                <td><img style = "width: 60px;"src="<?php echo $result ['Photo_path'];?>" alt=""></td>
                 <td><?php 
 
                 if($result['training_plan_Name']){

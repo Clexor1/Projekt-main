@@ -10,7 +10,7 @@ require_once 'config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register member</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
     <style>
 
     </style>
@@ -66,39 +66,16 @@ require_once 'config.php';
             
             ?>
         </select><br>
-
-        <label for="">Postavi sliku</label>
-        <input type="hidden" name="Photo_path" id="PhotoPathInput" value="">
-        <div id="dropzone-upload" class = "dropzone"></div>
-        <button type="submit">Register Member</button>
+             <input type="file" name = "my_image">
+        
+        
+        <button type="submit" name="submit" value="Upload">Register Member</button>
     </form>
+                
+
 </div>
     <?php
     $conn ->close();
-    ?>
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-
-    <script>
-        Dropzone.options.dropzoneUpload = {
-            url: "upload_photo.php",
-            paramName: "photo",
-            maxFilesize:20 ,//MB
-            acceptedFiles: "image/*",
-            init:function(){
-                //Parsaj JSON response
-                this.on("success", function (file, response){
-                    const jsonResponse = JSON.parse(response);
-                    //provjeri jel se file uploadu uspješno
-                    if(jsonResponse.success){
-                        document.getElementById('PhotoPathInput').value=jsonResponse.Photo_path;
-                    }
-                    else{
-                        console.error(jsonResponse.error);
-                    }
-                });
-            }
-        };
-    </script>
-   
+    ?>   
 </body>
 </html>
