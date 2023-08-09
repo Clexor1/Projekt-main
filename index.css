@@ -11,13 +11,13 @@ h1 {
     color:white;
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color:white;
+#RegisterForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color:white;
 }
 
 label {

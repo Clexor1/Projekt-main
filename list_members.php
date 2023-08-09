@@ -22,17 +22,16 @@ require_once 'config.php';
 
              }
         body{
-            background-image: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-1920x1080-8324.png");
+            background-color: #2b2f36;
             }
         thead{
             background-color: #04AA6D;
             }
         tr:hover {background-color: coral;}
-        th, td{
-            border: 1px solid #ddd;
-        }
+
         #table td, #table th{
             padding: 10px;
+            border: 1px solid white;
         }
 
 
@@ -50,6 +49,15 @@ require_once 'config.php';
             <li style="float:right"><a class="active" href="#about">FitGym</a></li>
         </ul>
     </nav>
+    <?php  if (isset($_SESSION['poruka'])) { ?>
+    <div class="alert">
+        <?php
+        echo $_SESSION['poruka'];
+       unset($_SESSION['poruka']);
+        ?>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+<?php  }; ?>
     <h1>List of members</h1>
 
         <table id="table">
@@ -59,6 +67,7 @@ require_once 'config.php';
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Trainer</th>
+                <th>Member id</th>
                 <th>Photo</th>
                 <th>Training plan</th>
                 <th>Access card</th>
@@ -95,7 +104,8 @@ require_once 'config.php';
                     }
                 
                 ?></td>
-                <td><?php echo $result ['Photo_path'];?></td>
+                <td><?php echo $result ['Members_ID'];?></td>
+                <td><img style = "width: 60px;"src="<?php echo $result ['Photo_path'];?>" alt=""></td>
                 <td><?php 
 
                 if($result['training_plan_Name']){
@@ -115,10 +125,10 @@ require_once 'config.php';
                 echo $new_date;
                 ?></td> 
                 <td>
-                    <form action="delete_member.php" action="POST"></form>
-                    <input type="hidden" value="" name = "Members_ID"<?php echo $result ['Members_ID'];?>>
+                    <form action="delete_member.php" method="POST">
+                    <input type="hidden" name = "Members_ID" value="<?php echo $result ['Members_ID'];?>">
                     <button>DELETE</button>
-
+                    </form>
 
                 </td>
             </tr>
