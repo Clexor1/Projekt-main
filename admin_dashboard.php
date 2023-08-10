@@ -109,6 +109,17 @@ if(!isset($_SESSION['Admin_ID'])){
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="card">
+        <a href="Add_trainer.php">
+          <img src = "image/grupni.jpg" alt="Slika teretane" class="card-img-top"  width="300" height="200">
+        </a>
+          <div class="card-body">
+            <h5 class="card-title">Dodijeli trenera clanu</h5>
+            <p class="card-text">Pridružite se našim grupnim treninzima za zabavu i motivaciju uz stručne trenere.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
