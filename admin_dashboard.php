@@ -71,14 +71,16 @@ if(!isset($_SESSION['Admin_ID'])){
           <img src="image/kardio.jpg" alt="Slika teretane" class="card-img-top"  width="300" height="200">
         </a>
           <div class="card-body">
-            <h5 class="card-title">Popis</h5>
-            <p class="card-text">Pregledaj popis membera</p>
+            <h5 class="card-title">Popis membera</h5>
+            <p class="card-text">Pregledaj popis membera koji su učlanjeni u FitGym!</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
+          <a href="register_trainers.php">
           <img src="image/vjezbe_snage.jpg" alt="Slika teretane" class="card-img-top" width="300" height="200">
+          </a>
           <div class="card-body">
             <h5 class="card-title">Registracija trenera</h5>
             <p class="card-text">Isprobajte različite vježbe snage kako biste izgradili mišićnu masu i snagu.</p>
@@ -96,12 +98,30 @@ if(!isset($_SESSION['Admin_ID'])){
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="card">
+        <a href="list_trainers.php">
+          <img src = "image/grupni.jpg" alt="Slika teretane" class="card-img-top"  width="300" height="200">
+        </a>
+          <div class="card-body">
+            <h5 class="card-title">Popis trenera</h5>
+            <p class="card-text">Pridružite se našim grupnim treninzima za zabavu i motivaciju uz stručne trenere.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+        <a href="Add_trainer.php">
+          <img src = "image/grupni.jpg" alt="Slika teretane" class="card-img-top"  width="300" height="200">
+        </a>
+          <div class="card-body">
+            <h5 class="card-title">Dodijeli trenera clanu</h5>
+            <p class="card-text">Pridružite se našim grupnim treninzima za zabavu i motivaciju uz stručne trenere.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="jumbotron text-center">
-    <h1>Najbolju teretanu u gradu!</h1>
-    <p id="tekst2">Iskoristite svoje vrijeme u teretani i postanite fit!</p>
-  </div> 
 </body>
 
 </html>
