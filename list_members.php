@@ -33,7 +33,19 @@ require_once 'config.php';
             padding: 10px;
             border: 1px solid white;
         }
-
+        #button {
+    position: relative;
+    left: 285px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
 
     </style>
 </head>
@@ -60,6 +72,9 @@ require_once 'config.php';
 <?php  }; ?>
     <h1>List of members</h1>
 
+        <a href="export.php?What=members">
+            <button id="button">Export</button>
+        </a>
         <table id="table">
             <thead>
                 <th>First Name</th>
